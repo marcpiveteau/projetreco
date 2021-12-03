@@ -5,3 +5,4 @@ matplotlib==3.2.2
 streamlit==1.0.0
 plotly==4.4.1
 scikit-learn==1.0.1
+streamlit-player==0.1.5
