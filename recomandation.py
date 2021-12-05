@@ -6,14 +6,14 @@ from streamlit_player import st_player
 import numpy as np
 from sklearn.neighbors import NearestNeighbors
 
-link = "https://raw.githubusercontent.com/marcpiveteau/projet2/main/tableallege4.csv"
+link = "https://raw.githubusercontent.com/marcpiveteau/projetreco/main/dfalleger2.csv"
 table = pd.read_csv(link)
 
 link2="https://raw.githubusercontent.com/marcpiveteau/projet2/main/tablecompl3.csv"
 tablelien =pd.read_csv(link2)
 
 
-st.title('Bienvenue sur Marcflix!')
+st.title('Bienvenue sur MARCFLIX!')
 
 
 table2 =table[['titre','isAdult', 'année_du_film','durée_du_film','notes_du_film', 'numVotes','nb_genres']]
@@ -29,7 +29,10 @@ def erreur():
     st.stop()
 
 recherche = st.selectbox('tu veux rechercher ton film par :',['titre','acteur ou actrice'])
-choix = st.text_input('ecrit ta recherche')
+choix = st.text_input("ecrit le titre ou l'acteur que tu souhaites et tape sur entrée pour valider")
+lancerreco = st.checkbox("une fois le titre ou acteur écrit et validé => clique si Tu veux ta recommandation")
+if not lancerreco:
+    st.stop()
 if recherche=='titre':
     lignedufilm = table.loc[table['titre'].str.contains(choix)]
     if len(lignedufilm)==0:
@@ -239,3 +242,4 @@ def recomandation(x,cv):
 
 recomandation(lignefilm,i)
         
+
