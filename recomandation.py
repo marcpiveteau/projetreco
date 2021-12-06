@@ -24,7 +24,7 @@ def description(x):
     st.write("il dure ", x.iloc[0,3]," minutes et", x.iloc[0,10], " jouent dedans")
 
 def erreur():
-    st.write("pas de film trouvé, attention au majuscule et et l'ortographe")
+    st.write("pas de film trouvé, attention aux majuscules et et l'ortographe")
     st.markdown("![Alt Text](https://raw.githubusercontent.com/marcpiveteau/projet2/main/not%20found.gif)")
     st.stop()
 
@@ -38,7 +38,7 @@ if recherche=='titre':
     if len(lignedufilm)==0:
         erreur()
     if len(lignedufilm) >1:
-        st.write('il y a ', len(lignedufilm), 'de votre film le quel choisissez vous')
+        st.write('il y a ', len(lignedufilm), 'choix possible de votre film le quel choisissez vous ?')
         for i in range (len(lignedufilm)):
             st.write(lignedufilm.iloc[i,5], ' réalisé par ', lignedufilm.iloc[i,6],'en',lignedufilm.iloc[i,2], '  si oui tapez :', i)
             st.write('------------------')
