@@ -38,7 +38,7 @@ if recherche=='titre':
     if len(lignedufilm)==0:
         erreur()
     if len(lignedufilm) >1:
-        st.write('il y a ', len(lignedufilm), 'choix possible de votre film le quel choisissez vous ?')
+        st.write('il y a ', len(lignedufilm), 'choix possible de votre film lequel choisissez vous ?')
         for i in range (len(lignedufilm)):
             st.write(lignedufilm.iloc[i,5], ' réalisé par ', lignedufilm.iloc[i,6],'en',lignedufilm.iloc[i,2], '  si oui tapez :', i)
             st.write('------------------')
